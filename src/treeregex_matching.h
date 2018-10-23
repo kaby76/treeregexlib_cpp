@@ -2,6 +2,7 @@
 #define TREEREGEX_MATCHING_H
 
 #include <map>
+#include <array>
 #include <cstdint>
 #include <cstring>
 #include "treeregex_to_nfa.h"

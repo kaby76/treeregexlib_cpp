@@ -8,6 +8,7 @@
 #include <sstream>
 #include <map>
 #include <memory>
+#include <ctype.h>
 
 #include "constants.h"
 
@@ -18,6 +19,7 @@ struct Context;
 struct ContextHole;
 struct StringLeaf;
 struct Tree : std::enable_shared_from_this<Tree> {
+
 	virtual void print(std::ostream& out, bool serialize=false, int tabs=0) = 0;
 	virtual std::string str(){
 		std::ostringstream ost;
@@ -168,7 +170,7 @@ int assertAndEatNextToken(const std::string& str, int i, const std::string& v){
 
 bool isAlpha(const std::string& s){
 	return std::all_of(s.begin(), s.end(), [&](char a){
-			return std::isdigit(a);
+			return isdigit(a);
 		});
 }
 
